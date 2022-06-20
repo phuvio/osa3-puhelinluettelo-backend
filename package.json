@@ -7,9 +7,9 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf build && cd ../fullstack/osa3/puhelinluettelo/ && npm run build && cp -r build ../../puhelinluettelo",
+    "build:ui": "rm -rf build && cd ../fullstack/osa3/puhelinluettelo/ && npm run build && cp -r build ../../../puhelinluettelo",
     "deploy": "git push heroku master",
-    "depley:full": "npm run build:ui && gti add . && git -commit -m uibuild && npm run deploy",
+    "depley:full": "npm run build:ui && git add . && git -commit -m uibuild && npm run deploy",
     "logs:prod": "heroku logs --tail"
   },
   "author": "Petteri Huvio",
