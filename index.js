@@ -45,7 +45,7 @@ app.get('/api/persons/:id', (request, response, next) => {
         response.json(person)
       } else {
         console.log('person not found')
-        response.status(404).end()
+        response.status(404).send()
       }
     })
     .catch(error => next(error))
@@ -100,7 +100,7 @@ app.get('/api/persons', (req, res) => {
     })
 })
 
-const unknownEndpoint = (request, response) => {
+const unknownEndpoint = (request, response, next) => {
   response.status(404).send({ error: 'unknown endpoint' })
 }
 app.use(unknownEndpoint)
